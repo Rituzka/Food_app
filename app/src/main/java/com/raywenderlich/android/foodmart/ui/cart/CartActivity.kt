@@ -31,6 +31,8 @@
 
 package com.raywenderlich.android.foodmart.ui.cart
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -103,14 +105,12 @@ class CartActivity : AppCompatActivity(), CartContract.View, CartAdapter.CartAda
 
   @Suppress("UNUSED_PARAMETER")
   fun showPaymentMethods(view: View) {
-    checkoutButton.visibility = View.INVISIBLE
-    paymentMethodContainer.visibility = View.VISIBLE
+    animateShowPaymentMethodContainer()
   }
 
   @Suppress("UNUSED_PARAMETER")
   fun closePaymentMethods(view: View) {
-    checkoutButton.visibility = View.VISIBLE
-    paymentMethodContainer.visibility = View.INVISIBLE
+    animateHidePaymentMethodContainer()
   }
 
   @Suppress("UNUSED_PARAMETER")
@@ -122,5 +122,22 @@ class CartActivity : AppCompatActivity(), CartContract.View, CartAdapter.CartAda
   fun onCartDeleteItemEvent(event: CartDeleteItemEvent) {
     adapter.notifyItemRemoved(event.position)
     presenter.loadCart(false)
+  }
+
+  private fun animateShowPaymentMethodContainer() {
+    paymentMethodContainer.visibility = View.VISIBLE
+    animatePaymentMethodContainer(paymentMethodContainer.height.toFloat(), 0f)
+
+  }
+
+  private fun animateHidePaymentMethodContainer() {
+    animatePaymentMethodContainer(0f, paymentMethodContainer.height.toFloat())
+  }
+
+  private fun animatePaymentMethodContainer(startValue: Float, endValue: Float) {
+    val animator = ObjectAnimator.ofFloat(paymentMethodContainer, "translationY", startValue, endValue)
+    animator.duration = 500
+    animator.start()
+
   }
 }
