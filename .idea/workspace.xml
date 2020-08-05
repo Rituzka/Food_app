@@ -9,7 +9,10 @@
     <list default="true" id="1fd91bff-2396-474a-afd6-fa0c5ace36b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/foodmart/ui/detail/FoodActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/foodmart/ui/detail/FoodActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/anim/rotate.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/anim/rotate_and_scale.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/foodmart/ui/items/ItemsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/foodmart/ui/items/ItemsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/foodmart/ui/items/ItemsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/foodmart/ui/items/ItemsAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_food.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_food.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_food.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_food.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,10 +130,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="77" y="83" key="#com.intellij.ide.util.MemberChooser" timestamp="1596659164579">
+    <state x="77" y="83" key="#com.intellij.ide.util.MemberChooser" timestamp="1596659886962">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="77" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596659164579" />
+    <state x="77" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596659886962" />
     <state x="308" y="125" key="AndroidCreateResourceDirectoryDialog" timestamp="1596657863288">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -139,9 +142,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="370" y="130" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1596657956586" />
-    <state width="428" height="36" key="javadoc.popup.new" timestamp="1596659193275">
+    <state width="428" height="36" key="javadoc.popup.new" timestamp="1596660757496">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="428" height="36" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1596659193275" />
+    <state width="428" height="36" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1596660757496" />
   </component>
 </project>

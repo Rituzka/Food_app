@@ -98,21 +98,20 @@ class FoodActivity : AppCompatActivity(), FoodContract.View {
         monster.visibility = View.VISIBLE
         rotateAndScaleAnimation.setAnimationListener(object: Animation.AnimationListener {
           override fun onAnimationRepeat(p0: Animation?) {
-
           }
-
           override fun onAnimationEnd(p0: Animation?) {
             monster.visibility = View.INVISIBLE
-
           }
-
           override fun onAnimationStart(p0: Animation?) {
-
           }
-
         })
       }
     }
+  }
+
+  override fun onBackPressed() {
+    super.onBackPressed()
+    fab.visibility = View.GONE
   }
 
   override fun onResume() {
