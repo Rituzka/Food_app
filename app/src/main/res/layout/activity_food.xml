@@ -94,7 +94,12 @@
             android:layout_marginLeft="@dimen/padding_standard"
             android:layout_marginRight="@dimen/padding_standard"
             android:layout_marginTop="@dimen/padding_standard"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+              android:transitionName="tName"
+            android:textColor = "@android:color/black"
+              android:textSize="@dimen/food_name_text_size"
+              android:textStyle="bold"
+
+              />
 
           <TextView
             android:id="@+id/foodDescription"
