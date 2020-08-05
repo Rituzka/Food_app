@@ -7,8 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fd91bff-2396-474a-afd6-fa0c5ace36b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/rotate.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/foodmart/ui/items/ItemsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/foodmart/ui/items/ItemsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/foodmart/ui/detail/FoodActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/foodmart/ui/detail/FoodActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +28,13 @@
         <projects_view />
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -123,9 +131,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="77" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596642635553" />
-    <state width="428" height="36" key="javadoc.popup.new" timestamp="1596643872825">
+    <state x="308" y="125" key="AndroidCreateResourceDirectoryDialog" timestamp="1596657863288">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="428" height="36" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1596643872825" />
+    <state x="308" y="125" key="AndroidCreateResourceDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1596657863288" />
+    <state x="370" y="130" key="AndroidCreateResourceFileDialog" timestamp="1596657956586">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="370" y="130" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1596657956586" />
+    <state width="428" height="36" key="javadoc.popup.new" timestamp="1596658567133">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="428" height="36" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1596658567133" />
   </component>
 </project>
