@@ -39,6 +39,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import android.view.animation.BounceInterpolator
 import com.raywenderlich.android.foodmart.R
 import com.raywenderlich.android.foodmart.model.Food
 import com.raywenderlich.android.foodmart.model.events.CartDeleteItemEvent
@@ -136,6 +137,7 @@ class CartActivity : AppCompatActivity(), CartContract.View, CartAdapter.CartAda
 
   private fun animatePaymentMethodContainer(startValue: Float, endValue: Float) {
     val animator = ObjectAnimator.ofFloat(paymentMethodContainer, "translationY", startValue, endValue)
+    animator.interpolator = BounceInterpolator()
     animator.duration = 500
     animator.start()
 

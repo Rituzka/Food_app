@@ -31,13 +31,21 @@
 
 package com.raywenderlich.android.foodmart.ui.items
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.support.v4.view.GravityCompat.apply
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.view.Gravity.apply
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.TextView
 import com.raywenderlich.android.foodmart.R
 import com.raywenderlich.android.foodmart.model.Food
@@ -58,6 +66,10 @@ class ItemsActivity : AppCompatActivity(), ItemsContract.View, ItemsAdapter.Item
 
   private var itemCount: TextView? = null
   private var itemCountCircle: FrameLayout? = null
+
+  companion object {
+    const val DURATION = 500L
+  }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -134,8 +146,61 @@ class ItemsActivity : AppCompatActivity(), ItemsContract.View, ItemsAdapter.Item
     presenter.removeItem(item)
   }
 
-  override fun addItem(item: Food) {
-    presenter.addItem(item)
+  override fun addItem(item: Food, foodImageView: ImageView, cartButton: ImageView ) {
+    val foodImagePosition = getPositionOf(foodImageView)
+    val itemCountCirclePosition = getPositionOf(itemCountCircle)
+
+    val foodImageSize = resources.getDimension(R.dimen.list_item_height).toInt()
+    val viewToAnimate = setUpViewToAnimate(item, foodImageView, foodImageSize)
+    itemsRootView.addView(viewToAnimate)
+
+    val xAnimator = objectAnimatorOfFloat(viewToAnimate, "x", foodImagePosition[0].toFloat(),
+    itemCountCirclePosition[0].toFloat() - foodImageSize/2)
+    val yAnimator = objectAnimatorOfFloat(viewToAnimate, "y", foodImagePosition[1].toFloat(),
+    itemCountCirclePosition[1].toFloat() - foodImageSize)
+    val alphaAnimator = objectAnimatorOfFloat(viewToAnimate, "alpha", 0f, 1f)
+
+    cartButton.isEnabled = false
+
+   AnimatorSet().apply{
+     play(xAnimator).with(yAnimator).with(alphaAnimator)
+
+    addListener(object: AnimatorListenerAdapter() {
+      override fun onAnimationEnd(p0: Animator?) {
+        presenter.addItem(item)
+        itemsRootView.removeView(viewToAnimate)
+        cartButton.isEnabled = true
+      }
+    })
+
+     start()
+   }
+
+  }
+
+  private fun getPositionOf(view: View?): IntArray {
+    val position = intArrayOf(0,0)
+    view?.getLocationOnScreen(position)
+    return position
+  }
+
+  private fun setUpViewToAnimate(item: Food, imageView: ImageView, imageSize: Int): ImageView {
+    val viewToAnimate = ImageView(this)
+    viewToAnimate.setImageResource(resources.getIdentifier(item.thumbnail,null, packageName))
+    val layoutParams = imageView.layoutParams
+    layoutParams.height = imageSize
+    layoutParams.width = imageSize
+    viewToAnimate.layoutParams = layoutParams
+    viewToAnimate.alpha = 0f
+    return viewToAnimate
+
+  }
+
+  private fun objectAnimatorOfFloat(view: View, propertyName: String, startValue: Float, endValue: Float): ObjectAnimator {
+    val animator = ObjectAnimator.ofFloat(view, propertyName, startValue, endValue)
+    animator.interpolator = AccelerateDecelerateInterpolator()
+    animator.duration = DURATION
+    return animator
   }
 
   @Suppress("UNUSED_PARAMETER")
