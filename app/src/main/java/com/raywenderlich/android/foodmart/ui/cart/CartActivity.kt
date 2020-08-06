@@ -146,7 +146,7 @@ class CartActivity : AppCompatActivity(), CartContract.View, CartAdapter.CartAda
     })
     anim.start()
   }
-  
+
   private inner class PaymentMethodClipInfo {
     val x = paymentMethodContainer.width / 2
     val y = paymentMethodContainer.height - checkoutButton.height
