@@ -3,7 +3,7 @@
 _course: Ray Wenderlich_
 
 #### Barcelona, Spain
-![rita](https://user-images.githubusercontent.com/37933287/83359546-237e3500-a37b-11ea-9b61-9aeab5bf2fea.jpg)
+![food_app](https://user-images.githubusercontent.com/37933287/116003684-494da180-a5ff-11eb-9912-3809f35cb69b.png)
 
 ## Description:
 A basic mobile app e-commerce with products, categories, a cart and a payment method
